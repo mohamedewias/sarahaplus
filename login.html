@@ -12,8 +12,8 @@
 	                                      
 	                                       
 												<div class="form-group label-floating">
-													<label class="control-label">البريد الالكتروني</label>
-													<input type="email" class="form-control" id="email" >
+													<label class="control-label">اسم المستخدم</label>
+													<input type="text" class="form-control" id="name" >
 												</div>
 	                                        
 	                                        
@@ -33,24 +33,15 @@
 	                        </div>
 	                   
 						
-    						<div class="card card-profile">
-    							<div class="card-avatar">
-    								<a href="#pablo">
-    									<img class="img" src="img/BA.png" />
-    								</a>
-    							</div>
-
-    							
-    						</div>
 		    			
 	                
 	          <script type="text/javascript">
 $(document).ready(function(){
         
 		$("#submit").click(function(){
-			var email=$("#email").val();
+			var name=$("#name").val();
 			var password=$("#password").val();
-			var vardata="&submit&email="+email+"&password="+password;
+			var vardata="&submit&name="+name+"&password="+password;
 		console.log(vardata);
 		$("#submitn").text("cached").fadeIn(900);
 		$.ajax({

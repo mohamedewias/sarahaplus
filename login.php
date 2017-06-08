@@ -3,12 +3,12 @@ include("config.php");
 
 
 if(isset($_POST['submit'])){
-	$email=$_POST['email'];
+	$name=$_POST['name'];
 	$password=$_POST['password'];
 	
 
 if(empty($email)){echo "report_problem";}else {
-    $sql = "SELECT * FROM users WHERE `email`='$email'";
+    $sql = "SELECT * FROM users WHERE `name`='$name'";
 $result = $conn->query($sql);
    
 if ($result->num_rows > 0) {
