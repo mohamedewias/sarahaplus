@@ -23,25 +23,25 @@
                 <div class="cover-container">
                     <div class="masthead clearfix">
                         <div class="inner">
-                            <h3 class="masthead-brand"><a href="file:///tmp/.org.chromium.Chromium.bNpmNg/frameworks/bootstrap3.3.7/template/cover.html?pgid=1&amp;pgedit=1&amp;pglive=1#" style="outline: -webkit-focus-ring-color auto 5px; outline-offset: -2px; position: relative; display: block; padding: 10px 0px; font-size: 16px; font-weight: bold; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); background-color: rgb(51, 51, 51);">صراحة بلس</a></h3>
+                            <h3 class="masthead-brand"><a id="home" href="file:///tmp/.org.chromium.Chromium.bNpmNg/frameworks/bootstrap3.3.7/template/cover.html?pgid=1&amp;pgedit=1&amp;pglive=1#" style="outline: -webkit-focus-ring-color auto 5px; outline-offset: -2px; position: relative; display: block; padding: 10px 0px; font-size: 16px; font-weight: bold; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); background-color: rgb(51, 51, 51);">صراحة بلس</a></h3>
                             <nav>
                                 <ul class="nav masthead-nav">
                                     <li class="active">
 </li>
                                     <li>
-                                        <a href="#">تسجيل</a>
+                                        <a href="#" id="reg">تسجيل</a>
                                     </li>
                                     <li>
-                                        <a href="#">دخول</a>
+                                        <a href="#" id="login">دخول</a>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
-                    <div class="inner cover">
+                    <div class="inner cover" id="main">
                         <h1 class="cover-heading">صراحة بلس</h1>
                         <p class="lead">الصراحة بداية التغيير .</p>
-                        <p class="lead"><a href="#" class="btn btn-lg btn-default">تسجيل&nbsp;</a></p>
+                        <p class="lead"><a id="rege" href="#" class="btn btn-lg btn-default">تسجيل&nbsp;</a></p>
                     </div>
                     <div class="mastfoot">
                         <div class="inner">
@@ -54,9 +54,33 @@
         <!-- Bootstrap core JavaScript
     ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+        <script type="text/javascript">
+			$(document).ready(function(){
+        $("#reg,#rege").click(function(){
+			$.ajax({
+			type: "POST",
+			url: "../user.html",
+			
+			success : function(html){
+				$("#main").html(html);
+				}
+			});
+			});
+			$("#login").click(function(){
+			$.ajax({
+			type: "POST",
+			url: "../login.html",
+			
+			success : function(html){
+				$("#main").html(html);
+				}
+			});
+			});
+			});
+        </script>
     </body>
 </html>
