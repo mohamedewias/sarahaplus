@@ -17,7 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     </head>
-    <body>
+    <body dir="rtl">
         <div class="site-wrapper">
             <div class="site-wrapper-inner">
                 <div class="cover-container">
@@ -27,20 +27,13 @@
                             <nav>
                                 <ul class="nav masthead-nav" id="ulnav">
      
-                                    <li>
-                                        <a href="javascript:void(0);" id="reg">تسجيل</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" id="login">دخول</a>
-                                    </li>
+                                   
                                 </ul>
                             </nav>
                         </div>
                     </div>
                     <div class="inner cover" id="main">
-                        <h1 class="cover-heading">صراحة بلس</h1>
-                        <p class="lead">الصراحة بداية التغيير .</p>
-                        <p class="lead"><a id="rege" href="javascript:void(0);" class="btn btn-lg btn-default">تسجيل&nbsp;</a></p>
+                        
                     </div>
                     <div class="mastfoot">
                         <div class="inner">
@@ -61,7 +54,7 @@
 			$(document).ready(function(){
 				$.ajax({
 			type: "POST",
-			url: "../include.php",
+			url: "../include.php?user=1",
 			
 			success : function(html){
 				$("#main").html(html);
