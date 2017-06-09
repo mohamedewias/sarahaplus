@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,6 +12,8 @@
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="cover.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -23,7 +26,7 @@
                 <div class="cover-container">
                     <div class="masthead clearfix">
                         <div class="inner">
-                            <h3 class="masthead-brand"><a id="home" href="file:///tmp/.org.chromium.Chromium.bNpmNg/frameworks/bootstrap3.3.7/template/cover.html?pgid=1&amp;pgedit=1&amp;pglive=1#" style="outline: -webkit-focus-ring-color auto 5px; outline-offset: -2px; position: relative; display: block; padding: 10px 0px; font-size: 16px; font-weight: bold; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); background-color: rgb(51, 51, 51);">صراحة بلس</a></h3>
+                            <h3 class="masthead-brand"><a id="home" href="file:///tmp/.org.chromium.Chromium.bNpmNg/frameworks/bootstrap3.3.7/template/cover.html?pgid=1&amp;pgedit=1&amp;pglive=1#" style="outline: -webkit-focus-ring-color auto 5px; outline-offset: -2px; position: relative; display: block; padding: 10px 0px; font-size: 16px; font-weight: bold; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); background-color: rgb(51, 51, 51);"><i class="material-icons">home</i></a></h3>
                             <nav>
                                 <ul class="nav masthead-nav" id="ulnav">
      
@@ -54,7 +57,7 @@
 			$(document).ready(function(){
 				$.ajax({
 			type: "POST",
-			url: "../include.php?user=1",
+			url: "../include.php?user=<?php echo $_GET['user']; ?>",
 			
 			success : function(html){
 				$("#main").html(html);
