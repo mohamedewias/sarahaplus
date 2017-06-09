@@ -91,36 +91,6 @@
 				}
 			});
 			});
-			$("#profile").click(function(){
-			$.ajax({
-			type: "POST",
-			url: "../profile.php",
-			
-			success : function(html){
-				$("#main").html(html);
-				}
-			});
-			});
-			$("#msg").click(function(){
-			$.ajax({
-			type: "POST",
-			url: "../msg.php",
-			
-			success : function(html){
-				$("#main").html(html);
-				}
-			});
-			});
-			$("#exit").click(function(){
-			$.ajax({
-			type: "POST",
-			url: "exit.php",
-			
-			success : function(html){
-				$("#main").html(html);
-				}
-			});
-			});
 			});
         </script>
     </body>
