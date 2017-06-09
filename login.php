@@ -1,14 +1,12 @@
 <?php
-include("config.php");
-
-
+include 'config.php';
 if(isset($_POST['submit'])){
 	$name=$_POST['name'];
 	$password=$_POST['password'];
 	
 
-if(empty($email)){echo "report_problem";}else {
-    $sql = "SELECT * FROM users WHERE `name`='$name'";
+if(empty($name)){echo "report_problem";}else {
+    $sql = "SELECT * FROM users WHERE `username`='$name'";
 $result = $conn->query($sql);
    
 if ($result->num_rows > 0) {
@@ -17,7 +15,7 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     if($password==$row['password']){
 		$_SESSION['id']=$row['id'];
-		$_SESSION['Rank']=$row['Rank'];
+
 		echo "done";
 		?>
 <script type="text/javascript">window.location="index.php"</script>
@@ -26,16 +24,7 @@ if ($result->num_rows > 0) {
     
     <?php
 		}else{echo "report_problem";}
-    }}}}
-
-	
-
-$conn->close();
-
-
-
-
-
-
-
-?>
+    }}
+    else{echo "not find $name";}
+    }}
+    ?>

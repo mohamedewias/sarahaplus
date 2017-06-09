@@ -25,14 +25,13 @@
                         <div class="inner">
                             <h3 class="masthead-brand"><a id="home" href="file:///tmp/.org.chromium.Chromium.bNpmNg/frameworks/bootstrap3.3.7/template/cover.html?pgid=1&amp;pgedit=1&amp;pglive=1#" style="outline: -webkit-focus-ring-color auto 5px; outline-offset: -2px; position: relative; display: block; padding: 10px 0px; font-size: 16px; font-weight: bold; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); background-color: rgb(51, 51, 51);">صراحة بلس</a></h3>
                             <nav>
-                                <ul class="nav masthead-nav">
-                                    <li class="active">
-</li>
+                                <ul class="nav masthead-nav" id="ulnav">
+     
                                     <li>
-                                        <a href="#" id="reg">تسجيل</a>
+                                        <a href="javascript:void(0);" id="reg">تسجيل</a>
                                     </li>
                                     <li>
-                                        <a href="#" id="login">دخول</a>
+                                        <a href="javascript:void(0);" id="login">دخول</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -41,7 +40,7 @@
                     <div class="inner cover" id="main">
                         <h1 class="cover-heading">صراحة بلس</h1>
                         <p class="lead">الصراحة بداية التغيير .</p>
-                        <p class="lead"><a id="rege" href="#" class="btn btn-lg btn-default">تسجيل&nbsp;</a></p>
+                        <p class="lead"><a id="rege" href="javascript:void(0);" class="btn btn-lg btn-default">تسجيل&nbsp;</a></p>
                     </div>
                     <div class="mastfoot">
                         <div class="inner">
@@ -60,6 +59,22 @@
         <script src="js/ie10-viewport-bug-workaround.js"></script>
         <script type="text/javascript">
 			$(document).ready(function(){
+				$.ajax({
+			type: "POST",
+			url: "../include.php",
+			
+			success : function(html){
+				$("#main").html(html);
+				}
+			});
+			$.ajax({
+			type: "POST",
+			url: "../nav.php",
+			
+			success : function(html){
+				$("#ulnav").html(html);
+				}
+			});
         $("#reg,#rege").click(function(){
 			$.ajax({
 			type: "POST",
@@ -74,6 +89,36 @@
 			$.ajax({
 			type: "POST",
 			url: "../login.html",
+			
+			success : function(html){
+				$("#main").html(html);
+				}
+			});
+			});
+			$("#profile").click(function(){
+			$.ajax({
+			type: "POST",
+			url: "../profile.php",
+			
+			success : function(html){
+				$("#main").html(html);
+				}
+			});
+			});
+			$("#msg").click(function(){
+			$.ajax({
+			type: "POST",
+			url: "../msg.php",
+			
+			success : function(html){
+				$("#main").html(html);
+				}
+			});
+			});
+			$("#exit").click(function(){
+			$.ajax({
+			type: "POST",
+			url: "exit.php",
 			
 			success : function(html){
 				$("#main").html(html);

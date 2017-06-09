@@ -63,7 +63,7 @@ $(document).ready(function(){
 		$("#usern").text("cached").fadeIn(900);
 		$.ajax({
 			type: "POST",
-			url: "../user.php",
+			url: "./user.php",
 			data: vardata,
 			success : function(html){
 				$("#usern").html(html);
@@ -78,7 +78,7 @@ $(document).ready(function(){
 		$("#emailn").text("cached").fadeIn(900);
 		$.ajax({
 			type: "POST",
-			url: "../user.php",
+			url: "./user.php",
 			data: vardata,
 			success : function(html){
 				$("#emailn").html(html);
@@ -93,7 +93,7 @@ $(document).ready(function(){
 		$("#passwordn").text("cached").fadeIn(900);
 		$.ajax({
 			type: "POST",
-			url: "../user.php",
+			url: "./user.php",
 			data: vardata,
 			success : function(html){
 				$("#passwordn").html(html);
