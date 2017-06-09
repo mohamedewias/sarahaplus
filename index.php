@@ -71,26 +71,7 @@
 				$("#ulnav").html(html);
 				}
 			});
-        $("#reg,#rege").click(function(){
-			$.ajax({
-			type: "POST",
-			url: "../user.html",
-			
-			success : function(html){
-				$("#main").html(html);
-				}
-			});
-			});
-			$("#login").click(function(){
-			$.ajax({
-			type: "POST",
-			url: "../login.html",
-			
-			success : function(html){
-				$("#main").html(html);
-				}
-			});
-			});
+        
 			});
         </script>
     </body>

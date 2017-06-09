@@ -24,6 +24,7 @@ if(isset($_SESSION['id'])){ ?>
 
 
 ?>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 	
 $(document).ready(function(){
@@ -50,11 +51,32 @@ $(document).ready(function(){
 			$("#exit").click(function(){
 			$.ajax({
 			type: "POST",
-			url: "exit.php",
+			url: "../exit.php",
 			
 			success : function(html){
 				$("#main").html(html);
 				}
+			});
+			});
+			$("#reg,#rege").click(function(){
+			$.ajax({
+			type: "POST",
+			url: "../user.html",
+			
+			success : function(html){
+				$("#main").html(html);
+				}
+			});
+			});
+			$("#login").click(function(){
+			$.ajax({
+			type: "POST",
+			url: "../login.html",
+			
+			success : function(html){
+				$("#main").html(html);
+				}
+			});
 			});
 			});
 			</script>
